@@ -14,8 +14,8 @@ uint32_t GPIO::read(){
 	return LL_GPIO_IsInputPinSet(GPIOx, PinMask);
 }
 
-void GPIO::write(bool PinState){
-	if(PinState){
+void GPIO::write(pinState PinState){
+	if(pinState::set == PinState){
 		set();
 	}else{
 		reset();

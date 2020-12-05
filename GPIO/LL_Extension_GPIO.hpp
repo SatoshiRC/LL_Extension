@@ -17,10 +17,14 @@ private:
 	GPIO_TypeDef *GPIOx;
 	uint32_t PinMask;
 public:
+	enum class pinState{
+		reset,
+		set,
+	};
 	GPIO(GPIO_TypeDef *GPIOx, uint32_t PinMask)
 	:GPIOx(GPIOx),PinMask(PinMask){};
 	uint32_t read();
-	void write(bool PinState);
+	void write(pinState PinState);
 	void set();
 	void reset();
 	void toggle();
