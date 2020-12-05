@@ -23,7 +23,7 @@ public:
 	};
 	GPIO(GPIO_TypeDef *GPIOx, uint32_t PinMask)
 	:GPIOx(GPIOx),PinMask(PinMask){};
-	uint32_t read();
+	bool isSet();
 	void write(PinState state);
 	void set();
 	void reset();

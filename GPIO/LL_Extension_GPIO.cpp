@@ -10,7 +10,7 @@
 
 namespace llex{
 
-uint32_t GPIO::read(){
+bool GPIO::isSet(){
 	return LL_GPIO_IsInputPinSet(GPIOx, PinMask);
 }
 
