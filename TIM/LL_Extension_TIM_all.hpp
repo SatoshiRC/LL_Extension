@@ -10,7 +10,9 @@
 
 #ifndef CONFIG_DISABLE_MODULE_TIM
 
+#include "LL_Extension_TIM_BASE.hpp"
 #include "LL_Extension_TIM_pwm.hpp"
+#include "LL_Extension_TIM_interrupt.hpp"
 
 
 
