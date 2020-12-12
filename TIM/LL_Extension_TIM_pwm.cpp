@@ -21,6 +21,10 @@ void TIM_pwm::setCompare(uint16_t CompareValue){
 	TIM_OC_SetCompare(TIMx, CompareValue);
 }
 
+uint16_t TIM_pwm::getCompare(){
+	return TIM_OC_GetCompare(TIMx);
+}
+
 uint32_t TIM_pwm::getCounterPeriod(){
 	return LL_TIM_GetAutoReload(TIMx);
 }
