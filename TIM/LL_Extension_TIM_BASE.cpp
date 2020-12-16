@@ -25,27 +25,27 @@ uint32_t TIM_base::getAutoRelode(){
 	return LL_TIM_GetAutoReload(TIMx);
 }
 
-void TIM_base::enebleUpdateInterrupt(){
+void TIM_base::enableUpdateInterrupt(){
 	LL_TIM_EnableIT_UPDATE(TIMx);
 }
 
-void TIM_base::enebleTriggerInterrupt(){
+void TIM_base::enableTriggerInterrupt(){
 	LL_TIM_EnableIT_TRIG(TIMx);
 }
 
-void TIM_base::enebleCaputurCompare1Interrupt(){
+void TIM_base::enableCaputurCompare1Interrupt(){
 	LL_TIM_EnableIT_CC1(TIMx);
 }
 
-void TIM_base::enebleCaputurCompare2Interrupt(){
+void TIM_base::enableCaputurCompare2Interrupt(){
 	LL_TIM_EnableIT_CC2(TIMx);
 }
 
-void TIM_base::enebleCaputurCompare3Interrupt(){
+void TIM_base::enableCaputurCompare3Interrupt(){
 	LL_TIM_EnableIT_CC3(TIMx);
 }
 
-void TIM_base::enebleCaputurCompare4Interrupt(){
+void TIM_base::enableCaputurCompare4Interrupt(){
 	LL_TIM_EnableIT_CC4(TIMx);
 }
 
@@ -73,27 +73,27 @@ void TIM_base::disableCaputurCompare4Interrupt(){
 	LL_TIM_DisableIT_CC4(TIMx);
 }
 
-bool TIM_base::isEnebleUpdateInterrupt(){
+bool TIM_base::isenableUpdateInterrupt(){
 	return LL_TIM_IsEnabledIT_UPDATE(TIMx);
 }
 
-bool TIM_base::isEnebleTriggerInterrupt(){
+bool TIM_base::isenableTriggerInterrupt(){
 	return LL_TIM_IsEnabledIT_TRIG(TIMx);
 }
 
-bool TIM_base::isEnebleCaputurCompare1Interrupt(){
+bool TIM_base::isenableCaputurCompare1Interrupt(){
 	return LL_TIM_IsEnabledIT_CC1(TIMx);
 }
 
-bool TIM_base::isEnebleCaputurCompare2Interrupt(){
+bool TIM_base::isenableCaputurCompare2Interrupt(){
 	return LL_TIM_IsEnabledIT_CC2(TIMx);
 }
 
-bool TIM_base::isEnebleCaputurCompare3Interrupt(){
+bool TIM_base::isenableCaputurCompare3Interrupt(){
 	return LL_TIM_IsEnabledIT_CC3(TIMx);
 }
 
-bool TIM_base::isEnebleCaputurCompare4Interrupt(){
+bool TIM_base::isenableCaputurCompare4Interrupt(){
 	return LL_TIM_IsEnabledIT_CC4(TIMx);
 }
 
