@@ -4,6 +4,8 @@
  *  Created on: Dec 12, 2020
  *      Author: satoshi ohya
  */
+#ifndef CONFIG_DISABLE_MODULE_TIM
+
 #include "LL_Extension_TIM_BASE.hpp"
 
 namespace llex{
@@ -142,3 +144,5 @@ void TIM_base::clearFlagCaputurCompare4(){
 	LL_TIM_ClearFlag_CC4(TIMx);
 }
 }
+
+#endif /* CONFIG_DISABLE_MODULE_TIM */

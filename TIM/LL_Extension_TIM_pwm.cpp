@@ -4,6 +4,8 @@
  *  Created on: Dec 4, 2020
  *      Author: conat
  */
+#ifndef CONFIG_DISABLE_MODULE_TIM
+
 #include "LL_Extension_TIM_pwm.hpp"
 namespace llex{
 void TIM_pwm::start(){
@@ -29,3 +31,5 @@ uint32_t TIM_pwm::getCounterPeriod(){
 	return LL_TIM_GetAutoReload(TIMx);
 }
 }
+
+#endif /* CONFIG_DISABLE_MODULE_TIM */
