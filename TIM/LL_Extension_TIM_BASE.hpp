@@ -23,7 +23,7 @@ public:
 	void start();
 	void stop();
 	bool isStarted();
-	uint32_t getAutoRelode();
+	uint32_t getAutoReload();
 	void enableUpdateInterrupt();
 	void enableTriggerInterrupt();
 	void enableCaputurCompare1Interrupt();

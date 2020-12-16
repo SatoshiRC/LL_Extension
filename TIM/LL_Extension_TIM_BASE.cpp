@@ -21,7 +21,7 @@ bool TIM_base::isStarted(){
 	return LL_TIM_IsEnabledCounter(TIMx);
 }
 
-uint32_t TIM_base::getAutoRelode(){
+uint32_t TIM_base::getAutoReload(){
 	return LL_TIM_GetAutoReload(TIMx);
 }
 
