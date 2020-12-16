@@ -9,14 +9,14 @@
 #include "LL_Extension_TIM_pwm.hpp"
 namespace llex{
 void TIM_pwm::start(){
-	if(not LL_TIM_IsEnabledCounter(TIMx)){
-		LL_TIM_EnableCounter(TIMx);
+	if(not isStarted()){
+		start();
 	}
-	LL_TIM_CC_EnableChannel(TIMx, Channels);
+	enableCaputurCompare(channel);
 }
 
 void TIM_pwm::stop(){
-	LL_TIM_CC_DisableChannel(TIMx, Channels);
+	disableCaputurCompare(channel);
 }
 
 void TIM_pwm::setCompare(uint16_t CompareValue){
@@ -28,7 +28,7 @@ uint16_t TIM_pwm::getCompare(){
 }
 
 uint32_t TIM_pwm::getCounterPeriod(){
-	return LL_TIM_GetAutoReload(TIMx);
+	return getAutoReload();
 }
 }
 

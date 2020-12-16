@@ -25,6 +25,10 @@ uint32_t TIM_base::getAutoReload(){
 	return LL_TIM_GetAutoReload(TIMx);
 }
 
+void TIM_base::enableCaputurCompare(uint8_t channel){
+	LL_TIM_CC_EnableChannel(TIMx, channel);
+}
+
 void TIM_base::enableUpdateInterrupt(){
 	LL_TIM_EnableIT_UPDATE(TIMx);
 }
@@ -47,6 +51,10 @@ void TIM_base::enableCaputurCompare3Interrupt(){
 
 void TIM_base::enableCaputurCompare4Interrupt(){
 	LL_TIM_EnableIT_CC4(TIMx);
+}
+
+void TIM_base::disableCaputurCompare(uint8_t channel){
+	LL_TIM_CC_DisableChannel(TIMx, channel);
 }
 
 void TIM_base::disableUpdateInterrupt(){

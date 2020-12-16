@@ -24,12 +24,14 @@ public:
 	void stop();
 	bool isStarted();
 	uint32_t getAutoReload();
+	void enableCaputurCompare(uint8_t channel);
 	void enableUpdateInterrupt();
 	void enableTriggerInterrupt();
 	void enableCaputurCompare1Interrupt();
 	void enableCaputurCompare2Interrupt();
 	void enableCaputurCompare3Interrupt();
 	void enableCaputurCompare4Interrupt();
+	void disableCaputurCompare(uint8_t channel);
 	void disableUpdateInterrupt();
 	void disableTriggerInterrupt();
 	void disableCaputurCompare1Interrupt();
@@ -54,6 +56,14 @@ public:
 	void clearFlagCaputurCompare2();
 	void clearFlagCaputurCompare3();
 	void clearFlagCaputurCompare4();
+	void setCompareCH1(uint32_t CompareValue);
+	void setCompareCH2(uint32_t CompareValue);
+	void setCompareCH3(uint32_t CompareValue);
+	void setCompareCH4(uint32_t CompareValue);
+	uint32_t getCompareCH1();
+	uint32_t getCompareCH2();
+	uint32_t getCompareCH3();
+	uint32_t getCompareCH4();
 };
 }
 #endif /* CONFIG_DISABLE_MODULE_TIM */

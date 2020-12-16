@@ -13,17 +13,20 @@
 #include "tim.h"
 #include "functional"
 
+#include "LL_Extension_TIM_BASE.hpp"
+
 namespace llex{
 
-class TIM_pwm{
+class TIM_pwm : public TIM_base{
 private:
 	TIM_TypeDef *TIMx;
-	uint32_t Channels;
+	uint32_t channel;
 	std::function<void(TIM_TypeDef *TIMx, uint32_t CompareValue)> TIM_OC_SetCompare;
 	std::function<uint16_t(TIM_TypeDef *TIMx)> TIM_OC_GetCompare;
 public:
+	using TIM_base::TIM_base;
 	TIM_pwm(TIM_TypeDef *TIMx, uint32_t Channels)
-	:TIMx(TIMx), Channels(Channels){
+	:TIM_base(TIMx), TIMx(TIMx), channel(Channels){
 		switch(Channels){
 		case LL_TIM_CHANNEL_CH1:
 			TIM_OC_SetCompare = LL_TIM_OC_SetCompareCH1;
