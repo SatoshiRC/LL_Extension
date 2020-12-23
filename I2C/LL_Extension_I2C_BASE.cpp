@@ -240,6 +240,15 @@ void I2C_base::setOwnAddrerss1(uint16_t address, AddressSize OwnAddressSize){
 	LL_I2C_SetOwnAddress1(I2Cx, address, (uint32_t)OwnAddressSize);
 }
 
+uint16_t I2C_base::getOwnAddress1(){
+	uint16_t oar1 = READ_REG(I2Cx->OAR1);
+	if(oar1 & 0b1<<15){
+		return oar1 & 0b1111111111;
+	}else{
+		return (oar1 >> 1) & 0b1111111;
+	}
+}
+
 void I2C_base::setOwnAddrerss2(uint8_t address){
 	LL_I2C_SetOwnAddress2(I2Cx, address);
 }

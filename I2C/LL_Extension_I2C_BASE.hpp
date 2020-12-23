@@ -94,6 +94,7 @@ public:
 	bool isEnableGeneralCall();
 
 	void setOwnAddrerss1(uint16_t address, AddressSize OwnAddressSize);
+	uint16_t getOwnAddress1();
 	void setOwnAddrerss2(uint8_t address);
 	void enableOwnAddress2();
 	void disableOwnAddress2();
