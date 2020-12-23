@@ -124,7 +124,7 @@ bool I2C_base::isEnableInterrupError(){
 }
 
 
-bool I2C_base::isActiveFlagTransmitdataNotEmpty(){
+bool I2C_base::isActiveFlagTransmitdataEmpty(){
 	return LL_I2C_IsActiveFlag_TXE(I2Cx);
 }
 
@@ -291,7 +291,7 @@ void I2C_base::transmit8bit(uint8_t data){
 
 I2C_base::TransferDirection I2C_base::getTransferDirection(){
 	uint32_t tmp = LL_I2C_GetTransferDirection(I2Cx);
-	if(tmp == LL_I2C_DIRECTION_WRITE){
+	if(tmp == LL_I2C_DIRECTION_READ){
 		return I2C_base::TransferDirection::Write;
 	}else{
 		return I2C_base::TransferDirection::Read;
