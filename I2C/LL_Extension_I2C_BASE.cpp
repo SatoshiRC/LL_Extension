@@ -237,6 +237,9 @@ bool I2C_base::isEnableGeneralCall(){
 
 
 void I2C_base::setOwnAddrerss1(uint16_t address, AddressSize OwnAddressSize){
+	if(OwnAddressSize == I2C_base::AddressSize::BIT7){
+		address <<= 1;
+	}
 	LL_I2C_SetOwnAddress1(I2Cx, address, (uint32_t)OwnAddressSize);
 }
 
