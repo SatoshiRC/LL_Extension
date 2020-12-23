@@ -272,6 +272,10 @@ void I2C_base::generateStartCondition(){
 	LL_I2C_GenerateStartCondition(I2Cx);
 }
 
+void I2C_base::acknowledgeNextData(I2C_base::AcknowledgeType acknowledgeType){
+	LL_I2C_AcknowledgeNextData(I2Cx, (uint32_t)acknowledgeType);
+}
+
 void I2C_base::generateStopCondition(){
 	LL_I2C_GenerateStopCondition(I2Cx);
 }

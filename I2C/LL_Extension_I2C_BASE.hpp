@@ -26,6 +26,10 @@ public:
 		BIT7 = LL_I2C_OWNADDRESS1_7BIT,
 		BIT10 = LL_I2C_OWNADDRESS1_10BIT
 	};
+	enum class AcknowledgeType{
+		ACK = LL_I2C_ACK,
+		NACK = LL_I2C_NACK,
+	};
 
 	I2C_base(I2C_TypeDef *I2Cx):I2Cx(I2Cx){};
 
@@ -99,6 +103,8 @@ public:
 	void enableOwnAddress2();
 	void disableOwnAddress2();
 	bool isEnableOwnAddress2();
+
+	void acknowledgeNextData(AcknowledgeType acknowledgeType);
 
 	void generateStartCondition();
 	void generateStopCondition();
