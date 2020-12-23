@@ -256,6 +256,13 @@ bool I2C_base::isEnableOwnAddress2(){
 	return LL_I2C_IsEnabledOwnAddress2(I2Cx);
 }
 
+void I2C_base::generateStartCondition(){
+	LL_I2C_GenerateStartCondition(I2Cx);
+}
+
+void I2C_base::generateStopCondition(){
+	LL_I2C_GenerateStopCondition(I2Cx);
+}
 
 uint8_t I2C_base::receive8bit(){
 	return LL_I2C_ReceiveData8(I2Cx);

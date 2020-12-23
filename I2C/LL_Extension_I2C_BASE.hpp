@@ -99,6 +99,9 @@ public:
 	void disableOwnAddress2();
 	bool isEnableOwnAddress2();
 
+	void generateStartCondition();
+	void generateStopCondition();
+
 	uint8_t receive8bit();
 	void transmit8bit(uint8_t data);
 
