@@ -286,7 +286,12 @@ void I2C_base::transmit8bit(uint8_t data){
 
 
 I2C_base::TransferDirection I2C_base::getTransferDirection(){
-	return (TransferDirection)LL_I2C_GetTransferDirection(I2Cx);
+	uint32_t tmp = LL_I2C_GetTransferDirection(I2Cx);
+	if(tmp == LL_I2C_DIRECTION_WRITE){
+		return I2C_base::TransferDirection::Write;
+	}else{
+		return I2C_base::TransferDirection::Read;
+	}
 }
 }
 #endif /*#ifndef CONFIG_DISABLE_MODULE_I2C*/

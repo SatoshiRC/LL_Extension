@@ -19,8 +19,8 @@ private:
 	I2C_TypeDef *I2Cx;
 public:
 	enum class TransferDirection:uint32_t{
-		Write = LL_I2C_DIRECTION_WRITE,
-		Read = LL_I2C_DIRECTION_READ
+		Write = 0,
+		Read = 1,
 	};
 	enum class AddressSize{
 		BIT7 = LL_I2C_OWNADDRESS1_7BIT,
