@@ -209,6 +209,17 @@ void I2C_base::clearFlagOverrunUnderrun(){
 	LL_I2C_ClearFlag_OVR(I2Cx);
 }
 
+void I2C_base::enablePOS(){
+	LL_I2C_EnableBitPOS(I2Cx);
+}
+
+void I2C_base::disablePOS(){
+	LL_I2C_DisableBitPOS(I2Cx);
+}
+
+void I2C_base::isEnabledPOS(){
+	LL_I2C_IsEnabledBitPOS(I2Cx);
+}
 
 void I2C_base::enableReset(){
 	LL_I2C_EnableReset(I2Cx);

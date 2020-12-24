@@ -89,6 +89,10 @@ public:
 	void clearFlagAribitrationLost();
 	void clearFlagOverrunUnderrun();
 
+	void enablePOS();
+	void disablePOS();
+	void isEnabledPOS();
+
 	void enableReset();
 	void disableeReset();
 	bool isEnableReset();
