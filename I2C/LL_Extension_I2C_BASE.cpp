@@ -217,7 +217,7 @@ void I2C_base::disablePOS(){
 	LL_I2C_DisableBitPOS(I2Cx);
 }
 
-void I2C_base::isEnabledPOS(){
+bool I2C_base::isEnabledPOS(){
 	LL_I2C_IsEnabledBitPOS(I2Cx);
 }
 

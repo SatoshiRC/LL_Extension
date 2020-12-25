@@ -91,7 +91,7 @@ public:
 
 	void enablePOS();
 	void disablePOS();
-	void isEnabledPOS();
+	bool isEnabledPOS();
 
 	void enableReset();
 	void disableeReset();
