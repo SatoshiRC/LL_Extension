@@ -218,7 +218,7 @@ void I2C_base::disablePOS(){
 }
 
 bool I2C_base::isEnabledPOS(){
-	LL_I2C_IsEnabledBitPOS(I2Cx);
+	return LL_I2C_IsEnabledBitPOS(I2Cx);
 }
 
 void I2C_base::enableReset(){
