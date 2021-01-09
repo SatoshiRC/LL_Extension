@@ -15,7 +15,7 @@
 namespace llex{
 
 class I2C_base{
-private:
+protected:
 	I2C_TypeDef *I2Cx;
 public:
 	enum class TransferDirection:uint32_t{
