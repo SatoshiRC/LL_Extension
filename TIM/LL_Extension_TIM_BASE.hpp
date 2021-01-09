@@ -14,7 +14,7 @@
 
 namespace llex{
 class TIM_base{
-private:
+protected:
 	TIM_TypeDef *TIMx;
 public:
 	TIM_base(TIM_TypeDef *TIMx)
