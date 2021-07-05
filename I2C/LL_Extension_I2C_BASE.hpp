@@ -123,6 +123,6 @@ public:
 
 
 
-#endif /*#ifndef CONFIG_DISABLE_MODULE_I2C*/
+#endif /* CONFIG_DISABLE_MODULE_I2C */
 
 #endif /* I2C_LL_EXTENSION_I2C_BASE_HPP_ */
