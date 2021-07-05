@@ -64,7 +64,7 @@ public:
 	void disableInterrupError();
 	bool isEnableInterrupError();
 
-	bool isActiveFlagTransmitdataEmpty();
+	bool isActiveFlagTransmitDataEmpty();
 	bool isActiveFlagByteTransferFinished();
 	bool isActiveFlagReceiveDataNotEmpty();
 	bool isActiveFlagStartBit();

@@ -124,7 +124,7 @@ bool I2C_base::isEnableInterrupError(){
 }
 
 
-bool I2C_base::isActiveFlagTransmitdataEmpty(){
+bool I2C_base::isActiveFlagTransmitDataEmpty(){
 	return LL_I2C_IsActiveFlag_TXE(I2Cx);
 }
 
