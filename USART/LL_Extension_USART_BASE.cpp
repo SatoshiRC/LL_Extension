@@ -160,6 +160,18 @@ void USART_Base::clearFlag_nCTS(){
 	LL_USART_ClearFlag_nCTS(USARTx);
 }
 
+void USART_Base::enableReceiveIT(){
+	LL_USART_EnableIT_RXNE(USARTx);
+}
+
+void USART_Base::disableReseiveIT(){
+	LL_USART_DisableIT_RXNE(USARTx);
+}
+
+bool USART_Base::isEnableReceiveIT(){
+	return LL_USART_IsEnabledIT_RXNE(USARTx);
+}
+
 void USART_Base::transmitData8Bits(uint8_t value){
 	LL_USART_TransmitData8(USARTx, value);
 }

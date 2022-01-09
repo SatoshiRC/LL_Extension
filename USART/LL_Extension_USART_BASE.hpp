@@ -77,6 +77,11 @@ public:
 	void clearFlag_TC();
 	void clearFlag_LBD();
 	void clearFlag_nCTS();
+
+	void enableReceiveIT();
+	bool isEnableReceiveIT();
+	void disableReseiveIT();
+
 	void transmitData8Bits(uint8_t value);
 	void transmitData9Bits(uint16_t value);
 	void transmitData(uint16_t value);
