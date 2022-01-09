@@ -11,6 +11,7 @@
 #ifndef CONFIG_DISABLE_MODULE_I2C
 
 #include "LL_Extension_I2C_BASE.hpp"
+#include "LL_Extension_I2C_BlockingCommunication.hpp"
 
 #endif /*#ifndef CONFIG_DISABLE_MODULE_I2C*/
 

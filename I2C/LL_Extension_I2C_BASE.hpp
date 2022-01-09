@@ -115,6 +115,7 @@ public:
 
 	uint8_t receive8bit();
 	void transmit8bit(uint8_t data);
+	void dummyRead8bit();
 
 	TransferDirection getTransferDirection();
 

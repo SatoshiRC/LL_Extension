@@ -308,5 +308,11 @@ I2C_base::TransferDirection I2C_base::getTransferDirection(){
 		return I2C_base::TransferDirection::Read;
 	}
 }
+
+void I2C_base::dummyRead8bit(){
+	volatile uint8_t buffer;
+	buffer = receive8bit();
+	(void)buffer;
+}
 }
 #endif /*#ifndef CONFIG_DISABLE_MODULE_I2C*/
