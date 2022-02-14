@@ -12,6 +12,7 @@
 
 #include "USART/LL_Extension_USART_BASE.hpp"
 #include "USART/LL_Extension_USART_BlockingCommunication.hpp"
+#include "USART/LL_Extension_USART_Interrupt.hpp"
 
 
 #endif /* CONFIG_DISABLE_MODULE_USART */

@@ -14,8 +14,6 @@
 
 namespace llex{
 class USART_Base{
-protected:
-	USART_TypeDef *USARTx;
 public:
 	enum class Parity{
 		  None = LL_USART_PARITY_NONE,
@@ -36,9 +34,16 @@ public:
 		StopBits15 = LL_USART_STOPBITS_1_5,
 		StopBits2 = LL_USART_STOPBITS_2,
 	};
+	enum class Mode{
+		none,
+		receive,
+		transmit,
+	};
 
 	USART_Base(USART_TypeDef *USARTx = nullptr)
-	:USARTx(USARTx){};
+	:USARTx(USARTx){
+		mode = Mode::none;
+	};
 	void enable();
 	void disable();
 	bool isEnable();
@@ -80,7 +85,15 @@ public:
 
 	void enableReceiveIT();
 	bool isEnableReceiveIT();
-	void disableReseiveIT();
+	void disableReceiveIT();
+
+	void enableIdleIT();
+	bool isEnableIdleIT();
+	void disableIdleIT();
+
+	void enableBreakDetectionIT();
+	bool isEnableBreakDetectionIT();
+	void disableBreakDetectionIT();
 
 	void transmitData8Bits(uint8_t value);
 	void transmitData9Bits(uint16_t value);
@@ -88,6 +101,10 @@ public:
 	uint8_t receiveData8Bits();
 	uint16_t receiveData9Bits();
 	uint16_t receiveData();
+
+protected:
+	USART_TypeDef *USARTx;
+	Mode mode;
 
 };
 }

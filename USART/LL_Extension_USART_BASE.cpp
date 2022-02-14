@@ -164,12 +164,36 @@ void USART_Base::enableReceiveIT(){
 	LL_USART_EnableIT_RXNE(USARTx);
 }
 
-void USART_Base::disableReseiveIT(){
+void USART_Base::disableReceiveIT(){
 	LL_USART_DisableIT_RXNE(USARTx);
 }
 
 bool USART_Base::isEnableReceiveIT(){
 	return LL_USART_IsEnabledIT_RXNE(USARTx);
+}
+
+void USART_Base::enableIdleIT(){
+	LL_USART_EnableIT_IDLE(USARTx);
+}
+
+void USART_Base::disableIdleIT(){
+	LL_USART_DisableIT_IDLE(USARTx);
+}
+
+bool USART_Base::isEnableIdleIT(){
+	return LL_USART_IsEnabledIT_IDLE(USARTx);
+}
+
+void USART_Base::enableBreakDetectionIT(){
+	LL_USART_EnableIT_LBD(USARTx);
+}
+
+void USART_Base::disableBreakDetectionIT(){
+	LL_USART_DisableIT_LBD(USARTx);
+}
+
+bool USART_Base::isEnableBreakDetectionIT(){
+	return LL_USART_IsEnabledIT_LBD(USARTx);
 }
 
 void USART_Base::transmitData8Bits(uint8_t value){
