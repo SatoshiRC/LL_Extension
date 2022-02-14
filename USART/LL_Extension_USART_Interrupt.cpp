@@ -7,10 +7,6 @@
 
 #include <USART/LL_Extension_USART_Interrupt.hpp>
 
-
-#include "GPIO/LL_Extension_GPIO_all.hpp"
-extern llex::GPIO PA5;
-
 namespace llex {
 USART_Interrupt::Error USART_Interrupt::IT_Handller(){
 	if(isActiveFlag_RXNE()){
