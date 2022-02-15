@@ -12,7 +12,6 @@ namespace llex{
 USART_BlockingCommunication::Error USART_BlockingCommunication::transmit(uint8_t *addr, uint8_t size){
 	USART_BlockingCommunication::Error error = USART_BlockingCommunication::Error::None;
 	USART_Base::enableDirectionTx();
-	USART_Base::disableDirectionRx();
 
 	while(!USART_Base::isActiveFlag_TXE());
 
