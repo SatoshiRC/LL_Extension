@@ -10,7 +10,7 @@
 
 #ifndef CONFIG_DISABLE_MODULE_USART
 
-#include "USART/LL_Extension_USART_BASE.hpp"
+#include "LL_Extension_USART_BASE.hpp"
 #include "string"
 #include "functional"
 
