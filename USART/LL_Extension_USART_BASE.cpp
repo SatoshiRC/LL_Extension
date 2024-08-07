@@ -67,10 +67,12 @@ USART_Base::StopBitsLength USART_Base::getStopBitsLength(){
 	return (StopBitsLength)LL_USART_GetStopBitsLength(USARTx);
 }
 
+#ifndef STM32C011xx
 void USART_Base::SetNodeAddress(uint8_t nodeAddress){
 	if(nodeAddress > 0xf) return;
 	LL_USART_SetNodeAddress(USARTx, nodeAddress);
 }
+#endif
 
 uint8_t USART_Base::GetNodeAddress(){
 	return LL_USART_GetNodeAddress(USARTx);
@@ -142,10 +144,6 @@ void USART_Base::clearFlag_ORE(){
 
 void USART_Base::clearFlag_IDLE(){
 	LL_USART_ClearFlag_IDLE(USARTx);
-}
-
-void USART_Base::clearFlag_RXNE(){
-	LL_USART_ClearFlag_RXNE(USARTx);
 }
 
 void USART_Base::clearFlag_TC(){

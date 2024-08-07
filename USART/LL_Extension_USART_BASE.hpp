@@ -59,7 +59,9 @@ public:
 	DataWidth getDataWidth();
 	void SetStopBitsLength(StopBitsLength stopBitsLength);
 	StopBitsLength getStopBitsLength();
+#ifndef STM32C011xx
 	void SetNodeAddress(uint8_t nodeAddress);
+#endif
 	uint8_t GetNodeAddress();
 	bool isActiveFlag_PE();
 	bool isActiveFlag_FE();
@@ -78,7 +80,6 @@ public:
 	void clearFlag_NE();
 	void clearFlag_ORE();
 	void clearFlag_IDLE();
-	void clearFlag_RXNE();
 	void clearFlag_TC();
 	void clearFlag_LBD();
 	void clearFlag_nCTS();
