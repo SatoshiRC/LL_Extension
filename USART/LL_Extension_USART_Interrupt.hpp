@@ -21,40 +21,26 @@ namespace llex {
  */
 class USART_Interrupt: public USART_Base {
 public:
-	using USART_Base::USART_Base;
 	USART_Interrupt(USART_TypeDef *USARTx = nullptr,
-			std::function<void(int)> completeReceive = [](int dataSize){},
-			std::function<void(void)> completeTransmit = [](){},
-			std::function<void(void)> idleDetected = [](){})
+			std::function<void(void)> completeReceive = [](){})
 	:USART_Base(USARTx),
-	 completeReceive(completeReceive),
-	 completeTransmit(completeTransmit),
-	 idleDetected(idleDetected){
-
+	 completeReceive(completeReceive){
+		isEnableEOL = false;
+		bufferAddr = nullptr;
+		bufferSize = 0;
+		countData = 0;
 	}
 
-	enum class Error{
-		None,
-		Error,
-		Busy,
-	};
-	Error IT_Handller();
-	Error transmit(uint8_t *addr, uint8_t size);
-	Error receive(uint8_t *addr, uint8_t const&size);
-
-	Error receive_untill_EOL(uint8_t *addr, uint8_t size, std::string eol);
+	void IT_Handller();
+	void transmit(uint8_t *addr, uint8_t size);
+	void receive(uint8_t *addr, uint8_t const&size);
 
 private:
 	bool isEnableEOL;
-	bool isReceive;
-	bool isTransmit;
 	uint8_t *bufferAddr;
 	uint8_t bufferSize;
 	uint8_t countData;
-	std::string eol;
-	std::function<void(int)> completeReceive;
-	std::function<void(void)> completeTransmit;
-	std::function<void(void)> idleDetected;
+	const std::function<void(void)> completeReceive;
 };
 
 } /* namespace llex */
